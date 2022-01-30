@@ -1,0 +1,80 @@
+:root {
+    --qr-code-size: 20rem;
+    --base-radius: .8rem;
+    --default-row-gap: 1.2rem;
+}
+
+html,
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #CFDAE8;
+    overflow-x: hidden;
+    text-align: center;
+    height: 100%;
+}
+
+.container {
+    height: 100vh;
+    padding: 2rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    background-color: #F7F7F7;
+    max-width: max-content;
+    padding: 1rem;
+    border-radius: var(--base-radius);
+    width: 20rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--default-row-gap);
+    box-shadow: 3px 4px 20px #BAC9DE;
+}
+
+.card .featured-image {
+    width: var(--qr-code-size);
+    max-width: 100%;
+    height: auto;
+}
+
+
+.card .featured-image img {
+    border-radius: calc(var(--base-radius) / 1.8);
+    width: var(--qr-code-size);
+    max-width: 100%;
+    height: auto;
+}
+
+.card .footer {
+    padding: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--default-row-gap);
+}
+
+
+.card .footer .title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2rem;
+    color: #232F43;
+}
+
+
+.card .footer .description {
+    line-height: 1.6rem;
+    color: #777;
+}
+
+.attribution {
+    padding: 2rem .5rem;
+    margin-bottom: 0;
+    background-color: #E9E9E9;
+    line-height: 1.4rem;
+}
