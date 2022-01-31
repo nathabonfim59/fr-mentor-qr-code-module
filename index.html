@@ -35,24 +35,24 @@
                             <i class="fa fa-link"></i>
                             <label for="link">Link</label>
                         </div>
-                        <input type="text" class="text-entry" name="link" v-model="link"/>
+                        <input type="text" class="text-entry" name="link" v-model="link" :disabled="status.loading"/>
                     </div>
                     <div class="input-group">
                         <div class="input-header">
                             <i class="fa fa-font"></i>
                             <label for="title">Title</label>
                         </div>
-                        <input type="text" class="text-entry" name="title" v-model="title"/>
+                        <input type="text" class="text-entry" name="title" v-model="title" :disabled="status.loading"/>
                     </div>
                     <div class="input-group">
                         <div class="input-header">
                             <i class="fa fa-quote-left"></i>
                             <label for="description">Description</label>
                         </div>
-                        <textarea rows="3" name="description" class="text-entry" v-model="description"></textarea>
+                        <textarea rows="3" name="description" class="text-entry" v-model="description" :disabled="status.loading"></textarea>
                     </div>
                 </div>
-                <div class="share-box" v-if="link_generated">
+                <div class="share-box" v-if="status.link_generated">
                     <div class="icon">
                         <i class="fa fa-share-alt"></i>
                     </div>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="actions">
-                    <a class="btn">{{ btn_text }}</a>
+                    <a class="btn" v-on:click="generateLink"><i class="fa fa-circle-notch fa-spin" v-if="status.loading"></i> {{ btn_text }}</a>
                 </div>
             </div>
         </div>

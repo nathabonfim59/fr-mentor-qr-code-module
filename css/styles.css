@@ -64,12 +64,25 @@ body {
     border-radius: calc(var(--base-radius) / 2.5);
     color: white;
     transition: background-color ease-out .3s;
+
+    /* Disable select  */
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
 .btn:hover {
     background-color: var(--primary-color-hover);
 }
 
+
+.btn .fa {
+    opacity: .5;
+    margin-right: .2rem;
+}
 .btn-outline {
     background-color: transparent;
     border: solid 2px var(--primary-color);

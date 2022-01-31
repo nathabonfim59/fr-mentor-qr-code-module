@@ -8,10 +8,12 @@ var vm = new Vue({
         description: 'Scan the QR code to visit Frontend Mentor and take your coding skills to the next level',
         btn_messages: {
             generate: 'Generate link',
+            loading: 'Generating',
             update: 'Update link',
         },
         btn_text: '',
         status: {
+            loading: false,
             link_generated: false,
         }
     },
@@ -31,6 +33,10 @@ var vm = new Vue({
         },
         updateQrCode: function() {
             qr.value = this.link
+        },
+        generateLink: function() {
+            this.status.loading = true;
+            this.btn_text = this.btn_messages.loading;
         }
     },
     watch: {
