@@ -1,4 +1,8 @@
 :root {
+    --primary-color: #2C7DFA;
+    --primary-color-hover: #0556CE;
+    --text-color-dark: #232F43;
+    --text-color-medium: #777;
     --qr-code-size: 20rem;
     --base-radius: .8rem;
     --default-row-gap: 1.2rem;
@@ -10,25 +14,82 @@ body {
     background-color: #CFDAE8;
     overflow-x: hidden;
     text-align: center;
-    height: 100%;
+    min-height: 100%;
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
     padding: 2rem;
     max-width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    row-gap: var(--default-row-gap);
     align-items: center;
     justify-content: center;
+    column-gap: 2rem;
+    transition: all ease-out .6s;
 }
 
+@media screen and (min-width: 992px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+
+/* Utility classes */
+.widget {
+    padding: 1rem;
+    border-radius: var(--base-radius);
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2rem;
+    color: var(--text-color-dark);
+}
+
+.description {
+    line-height: 1.6rem;
+    color: var(--text-color-medium);
+}
+
+.btn {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    padding: .6rem 1rem;
+    border-radius: calc(var(--base-radius) / 2.5);
+    color: white;
+    transition: background-color ease-out .3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: solid 2px var(--primary-color);
+    color: var(--primary-color);
+}
+
+
+.btn-outline:hover {
+    border-color: var(--primary-color-hover);
+    color: white;
+}
+
+.btn-icon {
+    border: none;
+}
+/* end-utilities */
+
+/* Card Styles  */
 .card {
     position: relative;
     background-color: #F7F7F7;
     max-width: max-content;
-    padding: 1rem;
-    border-radius: var(--base-radius);
     width: 20rem;
     max-width: 100%;
     display: flex;
@@ -42,7 +103,6 @@ body {
     max-width: 100%;
     height: auto;
 }
-
 
 .card .featured-image img {
     border-radius: calc(var(--base-radius) / 1.8);
@@ -58,19 +118,91 @@ body {
     row-gap: var(--default-row-gap);
 }
 
+/* end-cards  */
 
-.card .footer .title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 2rem;
-    color: #232F43;
+/* Generator styles */
+.generator {
+    background-color: #EEF2F7;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--default-row-gap);
+}
+
+.generator .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--default-row-gap);
+}
+
+.generator .form .input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input header  */
+.generator .form .input-group .input-header {
+    padding-bottom: .5rem;
+}
+
+.generator .form .input-group .input-header .fa {
+    color: var(--primary-color);
+    opacity: .8;
+}
+.generator .form .input-group .input-header label {
+    color: var(--text-color-dark);
+}
+/* end-input-header  */
+
+.generator .form .input-group .text-entry {
+    color: var(--text-color-dark);
+    padding: .2rem .5rem;
+    border: solid 2px #CFDAE8;
+    border-radius: calc(var(--base-radius) / 3);
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+}
+
+.generator .actions {
+    display: flex;
+    column-gap: 1rem;
+}
+
+/* end-generator */
+
+/* Share box */
+.share-box {
+    border-radius: calc(var(--base-radius) / 3);
+    display: flex;
+    background-color: #CFDAE8;
+}
+
+.share-box .icon {
+    background-color: var(--primary-color);
+    border-top-left-radius: calc(var(--base-radius) / 3);
+    border-bottom-left-radius: calc(var(--base-radius) / 3);
+    color: white;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-box .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex: 1;
 }
 
 
-.card .footer .description {
-    line-height: 1.6rem;
-    color: #777;
+.share-box .content .link {
+    padding-left: .6rem;
+    flex: 1;
 }
+
+/* end-share-box */
 
 .attribution {
     padding: 2rem .5rem;

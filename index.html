@@ -9,10 +9,11 @@
         <link rel="stylesheet" href="css/styles.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         <title>Frontend Mentor | QR code component</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <div class="container">
-            <main class="card">
+            <div class="widget card">
                 <div class="featured-image">
                     <img src="images/image-qr-code.png"/>
                 </div>
@@ -22,7 +23,53 @@
                         <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
                     </div>
                 </div>
-            </main>
+            </div>
+            <div class="widget generator">
+                <div class="header">
+                    <h3 class="title">Generate your own</h3>
+                    <p class="description">Fill up the form bellow and generate your own QR Code</p>
+                </div>
+                <div class="form">
+                    <div class="input-group">
+                        <div class="input-header">
+                            <i class="fa fa-link"></i>
+                            <label for="link">Link</label>
+                        </div>
+                        <input type="text" class="text-entry" name="link"/>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-header">
+                            <i class="fa fa-font"></i>
+                            <label for="title">Title</label>
+                        </div>
+                        <input type="text" class="text-entry" name="title"/>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-header">
+                            <i class="fa fa-quote-left"></i>
+                            <label for="description">Description</label>
+                        </div>
+                        <textarea rows="3" name="description" class="text-entry"></textarea>
+                    </div>
+                </div>
+                <div class="share-box">
+                    <div class="icon">
+                        <i class="fa fa-share-alt"></i>
+                    </div>
+                    <div class="content">
+                        <span class="link">https://localhost:8080/share?=1ycn6</span>
+
+                        <a class="btn btn-outline btn-icon">
+                            <i class="far fa-copy"></i>
+                            <span>Copy</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="actions">
+                    <a class="btn">Generate</a>
+                    <a class="btn btn-outline">Share</a>
+                </div>
+            </div>
         </div>
 
         <div class="attribution">
