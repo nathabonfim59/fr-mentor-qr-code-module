@@ -12,15 +12,15 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <div class="container">
+        <div class="container" id="app">
             <div class="widget card">
                 <div class="featured-image">
-                    <img src="images/image-qr-code.png"/>
+                    <canvas id="qr-code"></canvas>
                 </div>
                 <div class="footer">
-                    <h3 class="title">Improve your front-end skills by building projects</h3>
+                    <h3 class="title">{{ title }}</h3>
                     <div class="description">
-                        <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+                        <p>{{ description }}</p>
                     </div>
                 </div>
             </div>
@@ -35,24 +35,24 @@
                             <i class="fa fa-link"></i>
                             <label for="link">Link</label>
                         </div>
-                        <input type="text" class="text-entry" name="link"/>
+                        <input type="text" class="text-entry" name="link" v-model="link"/>
                     </div>
                     <div class="input-group">
                         <div class="input-header">
                             <i class="fa fa-font"></i>
                             <label for="title">Title</label>
                         </div>
-                        <input type="text" class="text-entry" name="title"/>
+                        <input type="text" class="text-entry" name="title" v-model="title"/>
                     </div>
                     <div class="input-group">
                         <div class="input-header">
                             <i class="fa fa-quote-left"></i>
                             <label for="description">Description</label>
                         </div>
-                        <textarea rows="3" name="description" class="text-entry"></textarea>
+                        <textarea rows="3" name="description" class="text-entry" v-model="description"></textarea>
                     </div>
                 </div>
-                <div class="share-box">
+                <div class="share-box" v-if="link_generated">
                     <div class="icon">
                         <i class="fa fa-share-alt"></i>
                     </div>
@@ -66,11 +66,11 @@
                     </div>
                 </div>
                 <div class="actions">
-                    <a class="btn">Generate</a>
-                    <a class="btn btn-outline">Share</a>
+                    <a class="btn">{{ btn_text }}</a>
                 </div>
             </div>
         </div>
+
 
         <div class="attribution">
             <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. <p>

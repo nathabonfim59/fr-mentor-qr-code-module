@@ -3,7 +3,7 @@
     --primary-color-hover: #0556CE;
     --text-color-dark: #232F43;
     --text-color-medium: #777;
-    --qr-code-size: 20rem;
+    --qr-code-size: 18rem;
     --base-radius: .8rem;
     --default-row-gap: 1.2rem;
 }
@@ -48,11 +48,13 @@ body {
     font-weight: 600;
     line-height: 2rem;
     color: var(--text-color-dark);
+    overflow-wrap: anywhere;
 }
 
 .description {
     line-height: 1.6rem;
     color: var(--text-color-medium);
+    overflow-wrap: anywhere;
 }
 
 .btn {
@@ -99,16 +101,21 @@ body {
 }
 
 .card .featured-image {
-    width: var(--qr-code-size);
+    border-radius: var(--base-radius);
+    background: rgb(180,209,255);
+    background: radial-gradient(circle, rgba(180,209,255,1) 0%, rgba(180,209,255,1) 86%, var(--primary-color) 86%, var(--primary-color) 100%);
     max-width: 100%;
-    height: auto;
+    width: var(--qr-code-size);
+    height: var(--qr-code-size);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.card .featured-image img {
-    border-radius: calc(var(--base-radius) / 1.8);
-    width: var(--qr-code-size);
-    max-width: 100%;
-    height: auto;
+.card .featured-image canvas {
+    width: calc(var(--qr-code-size) - 4rem);
+    height: calc(var(--qr-code-size) - 4rem);
 }
 
 .card .footer {
