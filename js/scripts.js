@@ -7,15 +7,17 @@ var vm = new Vue({
         title: 'Improve your front-end skills by building projects',
         description: 'Scan the QR code to visit Frontend Mentor and take your coding skills to the next level',
         btn_messages: {
-            generate: 'Generate link',
+            generate: 'Share generator',
             loading: 'Generating',
             update: 'Update link',
+            thanks: 'Thank you!',
         },
         btn_text: '',
         status: {
             loading: false,
             link_generated: false,
-        }
+        },
+        project_link: window.location.href,
     },
     mounted: function() {
         this.generateQrCode();
@@ -35,8 +37,11 @@ var vm = new Vue({
             qr.value = this.link
         },
         generateLink: function() {
-            this.status.loading = true;
-            this.btn_text = this.btn_messages.loading;
+            this.status.link_generated = true;
+            this.btn_text = this.btn_messages.thanks;
+        },
+        copyLink: async function() {
+            await navigator.clipboard.writeText(this.project_link)
         }
     },
     watch: {
