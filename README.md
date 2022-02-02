@@ -19,7 +19,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![image](https://user-images.githubusercontent.com/21281852/152071907-766369a3-9ca0-4345-a9b3-1a51363ddbca.png)
 
 **Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
@@ -29,17 +29,17 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
-1. Finigh de assiment
-2. Add a QR Code generator
-3. Add a URL generator
+1. Code the visual strucure
+2. Add a dummy QR Code generator 
+3. Add interacticity using Vue.js
+
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - CSS Variables
-- [Vue.js](https://nextjs.org/) - React framework
+- [Vue.js](https://nextjs.org/)
 
 ### What I learned
 
