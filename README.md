@@ -21,8 +21,6 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ![image](https://user-images.githubusercontent.com/21281852/152071907-766369a3-9ca0-4345-a9b3-1a51363ddbca.png)
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
@@ -43,38 +41,51 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+As someone who is coming from React, knowing that I could execute a function whenever a value changes that easily brings me joy. It really does!
 
-To see how you can add code snippets, see below:
+I mean, take a look at this code:
+
+```javascript
+    watch: {
+        link: function() {
+            this.updateQrCode();
+        }
+    }
+```
+
+By the way, conditional tags are really handy. The code below only shows the share panel, then the variable `status.link_generated` is true.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+    <div class="share-box" v-if="status.link_generated">
+        <div class="icon">
+            <i class="fa fa-share-alt"></i>
+        </div>
+        <div class="content">
+            <span class="link">{{ project_link }}</span>
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+            <a class="btn btn-outline btn-icon" v-on:click="copyLink">
+                <i class="far fa-copy"></i>
+                <span>Copy</span>
+            </a>
+        </div>
+    </div>
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+**Share links with your QR Code**: this was an something I originally was planing on doing, but ditched it for legal reasons. I would store user data and therefore, would need a policy privacy page, comply with local and international laws. You got the idea.
+> Definitely something I will tackle in a future iteration.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+### Am I in love with Vue.js?
+
+Maybe. I mean, not yet. We still are in the getting to know each other phase, you know? So far, so good. Not much to complain about. Great docs, good community.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Reset CSS](https://meyerweb.com/eric/tools/css/reset/) - A way to remove most of the cross-browser predefined visuals.
+- [qRious](https://github.com/neocotic/qrious) - The lib that generates the QR Code 'under the wood'.
+- [Vue.js](https://vuejs.org/v2/guide/) -  A reactive JavaScript framework that allowed me to dynamically update the pages, as the user type.
+
 
 ## Author
 
