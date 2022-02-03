@@ -13,19 +13,19 @@
         <meta property="og:image" content="preview.png">
     </head>
     <body>
-        <div class="container" id="app" role="none">
+        <div class="container" id="app" role="presentation">
             <div class="widget card" role="main">
                 <div class="featured-image">
                     <canvas id="qr-code"></canvas>
                 </div>
                 <div class="footer">
-                    <h3 class="title">{{ title }}</h3>
+                    <h1 class="title">{{ title }}</h1>
                     <div class="description">
                         <p>{{ description }}</p>
                     </div>
                 </div>
             </div>
-            <div class="widget generator" role="toolbar">
+            <div class="widget generator" role="form">
                 <div class="header">
                     <h3 class="title">Generate your own</h3>
                     <p class="description">Fill up the form below and generate your own QR Code</p>
@@ -50,7 +50,7 @@
                             <i class="fa fa-quote-left"></i>
                             <label for="description">Description</label>
                         </div>
-                        <textarea rows="3" name="description" class="text-entry" v-model="description" :disabled="status.loading"></textarea>
+                        <textarea rows="3" name="description" class="text-entry" v-model="description" :disabled="status.loading" id="description"></textarea>
                     </div>
                 </div>
                 <div class="share-box" v-if="status.link_generated">
