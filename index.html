@@ -27,28 +27,28 @@
             </div>
             <div class="widget generator" role="form">
                 <div class="header">
-                    <h2 class="title">Generate your own</h2>
-                    <p class="description">Fill up the form below and generate your own QR Code</p>
+                    <h2 class="title">{{language.content.title}}</h2>
+                    <p class="description">{{language.content.subtitle}}</p>
                 </div>
                 <div class="form">
                     <div class="input-group">
                         <div class="input-header">
                             <i class="fa fa-link"></i>
-                            <label for="link">Link</label>
+                            <label for="link">{{language.labels.link}}</label>
                         </div>
                         <input type="text" class="text-entry" name="link" v-model="link" :disabled="status.loading" id="link"/>
                     </div>
                     <div class="input-group">
                         <div class="input-header">
                             <i class="fa fa-font"></i>
-                            <label for="title">Title</label>
+                            <label for="title">{{language.labels.title}}</label>
                         </div>
                         <input type="text" class="text-entry" name="title" v-model="title" :disabled="status.loading" id="title"/>
                     </div>
                     <div class="input-group">
                         <div class="input-header">
                             <i class="fa fa-quote-left"></i>
-                            <label for="description">Description</label>
+                            <label for="description">{{language.labels.description}}</label>
                         </div>
                         <textarea rows="3" name="description" class="text-entry" v-model="description" :disabled="status.loading" id="description"></textarea>
                     </div>
@@ -62,14 +62,18 @@
 
                         <a class="btn btn-outline btn-icon" v-on:click="copyLink">
                             <i class="far fa-copy"></i>
-                            <span>Copy</span>
+                            <span>{{language.buttons.copy_link}}</span>
                         </a>
                     </div>
                 </div>
                 <div class="actions">
-                    <a class="btn" v-on:click="generateLink">
+                    <a class="btn" v-on:click="copyImage">
                         <i class="fa fa-circle-notch fa-spin" v-if="status.loading"></i>
-                        {{ btn_text }}
+                        {{ language.buttons.copy_image }}
+                    </a>
+                    <a class="btn btn-outline" v-on:click="generateLink">
+                        <i class="fa fa-circle-notch fa-spin" v-if="status.loading"></i>
+                        {{ language.buttons.share }}
                     </a>
                 </div>
             </div>

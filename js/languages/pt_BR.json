@@ -1,0 +1,26 @@
+{
+    "meta": {
+        "title": "Gerador de QR Code"
+    },
+    "content": {
+        "title": "Gere seu próprio QR-Code, gratuitamente!",
+        "subtitle": "Preencha o formulário abaixo e o código será gerado automaticamente."
+    },
+    "labels": {
+        "link": "Link (obrigatório)",
+        "title": "Título (opcional)",
+        "description": "Descrição (opcional)"
+    },
+    "inputs": {
+        "link": "https://github.com/nathabonfim59",
+        "title": "Gostou do site?",
+        "description": "Compartilhe o projeto e ajude na divulgação!"
+    },
+    "buttons": {
+        "share": "Compartilhar",
+        "share_message": "Gostou? Compartilhe nosso site e ajude na divulgação!",
+        "copy_image": "Copiar QR-Code",
+        "copy_link": "Copiar",
+        "thank_you": "Obrigado por compartilhar!"
+    }
+}

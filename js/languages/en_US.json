@@ -1,0 +1,26 @@
+{
+    "meta": {
+        "title": "QR-Code Generator"
+    },
+    "content": {
+        "title": "Generate your own QR-Code, for free!",
+        "subtitle": "Fill out the form and your QR-Code will be automatically generated."
+    },
+    "labels": {
+        "link": "Link (required)",
+        "title": "Title (optional)",
+        "description": "Description (optional)"
+    },
+    "inputs": {
+        "link": "https://github.com/nathabonfim59",
+        "title": "Dit you like the project?",
+        "description": "Share the project and follow me on github!"
+    },
+    "buttons": {
+        "share": "Share",
+        "share_message": "Did you like it? Share it and help others as well!",
+        "copy_image": "Copy QR-Code",
+        "copy_link": "Copy",
+        "thank_you": "Thanks for sharing!"
+    }
+}
