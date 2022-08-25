@@ -81,7 +81,7 @@ var vm = new Vue({
         async setLanguage(languageCode) {
             const languageFile = languageCode.replace(/-/, '_');
 
-            const response = await fetch('/js/languages/' + languageFile + '.json');
+            const response = await fetch(this.project_link + '/js/languages/' + languageFile + '.json');
             const json = await response.json();
             this.language = json;
 
